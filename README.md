@@ -1,2 +1,5 @@
 # edarslarbot
-@eDarslarBot\n— simple interface\n— free video courses\n— multifunction admin panel
+@eDarslarBot
+— simple interface
+— free video courses
+— multifunction admin panel

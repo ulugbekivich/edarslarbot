@@ -12,6 +12,17 @@ namespace eDarslarBot.Services
         {
             List<KeyboardButton[]> keyboardButtons = new List<KeyboardButton[]>();
             List<KeyboardButton> keyboardButtons2 = new List<KeyboardButton>();
+            for (int i = 1; i <= strings.Count; i++)
+            {
+                keyboardButtons2.Add(new KeyboardButton(strings[i - 1]));
+                if (i % row == 1) continue;
+                else
+                {
+                    keyboardButtons.Add(keyboardButtons2.ToArray());
+                    keyboardButtons2 = new List<KeyboardButton>();
+                }
+            }
+            keyboardButtons.Add(keyboardButtons2.ToArray());
             if (n == 1)
             {
                 keyboardButtons.Add(new KeyboardButton[] { "🔙 Orqaga" });
@@ -24,17 +35,6 @@ namespace eDarslarBot.Services
             {
                 keyboardButtons.Add(new KeyboardButton[] { "🔙 Admin panelga qaytish" });
             }
-            for (int i = 1; i <= strings.Count; i++)
-            {
-                keyboardButtons2.Add(new KeyboardButton(strings[i - 1]));
-                if (i % row == 1) continue;
-                else
-                {
-                    keyboardButtons.Add(keyboardButtons2.ToArray());
-                    keyboardButtons2 = new List<KeyboardButton>();
-                }
-            }
-            keyboardButtons.Add(keyboardButtons2.ToArray());
 
             return keyboardButtons;
         }
